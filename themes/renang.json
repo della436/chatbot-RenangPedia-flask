@@ -1,0 +1,539 @@
+
+{
+  "id": "renangpedia",
+  "name": "RenangPedia",
+  "bot_name": "RenangPedia",
+  "avatar": "🏊",
+  "color": "#087FAE",
+  "description": "Chatbot informasi gaya dan aturan dasar renang.",
+  "greeting": "Halo! Saya RenangPedia. Saya bisa menjelaskan berbagai gaya renang dan aturan dasar perlombaan. Silakan pilih atau tanyakan topik.",
+  "suggestions": [
+    "Apa saja gaya renang?",
+    "Bagaimana aturan start renang?",
+    "Apa penyebab diskualifikasi?",
+    "Berapa ukuran kolam renang?"
+  ],
+  "fallback": [
+    "Maaf, saya belum memahami pertanyaan itu. Coba tanyakan tentang gaya renang, perbedaan gaya, aturan start, atau diskualifikasi."
+  ],
+  "intents": [
+    {
+      "tag": "gaya_renang",
+      "patterns": [
+        "Apa saja gaya renang?",
+        "Gaya apa yang dilombakan?",
+        "Gaya renang?",
+        "Sebutkan macam-macam gaya renang."
+      ],
+      "responses": [
+        "Terdapat Empat gaya renang yang umum diperlombakan adalah gaya bebas, gaya punggung, gaya dada, dan gaya kupu-kupu. Selain itu ada nomor gaya ganti yang menggabungkan keempat gaya tersebut."
+      ]
+    },
+    {
+      "tag": "gaya_bebas",
+      "patterns": [
+        "Apa itu gaya bebas?",
+        "Gaya bebas itu apa?",
+        "Jelaskan gaya bebas?",
+        "Bagaimana cara melakukan gaya bebas?"
+      ],
+      "responses": [
+        "Pada nomor gaya bebas, perenang boleh memakai gaya apa saja, tetapi hampir semua perenang memakai gaya crawl atau dengan kayuhan tangan bergantian dan kaki naik turun. Pada nomor gaya ganti, gaya bebas berarti gaya apa pun selain punggung, dada, dan kupu-kupu."
+      ]
+    },
+    {
+      "tag": "gaya_punggung",
+      "patterns": [
+        "Apa itu gaya punggung?",
+        "Gaya punggung itu apa?",
+        "Jelaskan gaya punggung?",
+        "Bagaimana cara melakukan gaya punggung?"
+      ],
+      "responses": [
+        "Gaya punggung dilakukan dengan tubuh telentang sepanjang perlombaan, kecuali saat melakukan putaran balik. Ini satu-satunya gaya yang start-nya dari dalam air."
+      ]
+    },
+    {
+      "tag": "gaya_dada",
+      "patterns": [
+        "Apa itu gaya dada?",
+        "Gaya dada itu apa?",
+        "Jelaskan gaya dada?",
+        "Bagaimana cara melakukan gaya dada?"
+      ],
+      "responses": [
+        "Gaya dada memakai tarikan lengan dan tendangan kaki yang serentak dan simetris, dengan tendangan seperti katak. Saat berbalik dan finis, dinding harus disentuh dengan dua tangan secara bersamaan."
+      ]
+    },
+    {
+      "tag": "gaya_kupu_kupu",
+      "patterns": [
+        "Apa itu gaya kupu-kupu?",
+        "Gaya kupu-kupu itu apa?",
+        "Jelaskan gaya kupu-kupu?",
+        "Bagaimana cara melakukan gaya kupu-kupu?"
+      ],
+      "responses": [
+        "Gaya kupu-kupu memakai kedua lengan yang bergerak serentak dan diayun ke depan di atas permukaan air seperti kupu-kupu, dengan tendangan lumba-lumba (dolphin kick) yang serentak. Saat berbalik dan finis, dinding harus disentuh dengan dua tangan bersamaan."
+      ]
+    },
+    {
+      "tag": "gaya_ganti",
+      "patterns": [
+        "Apa itu gaya ganti?",
+        "Gaya ganti perorangan?",
+        "Urutan gaya ganti?",
+        "Bagaimana aturan gaya ganti?"
+      ],
+      "responses": [
+        "Pada nomor gaya ganti perorangan, perenang menempuh empat gaya dengan jarak yang sama, berurutan: kupu-kupu, punggung, dada, lalu gaya bebas. Berenang dengan urutan yang salah mengakibatkan diskualifikasi."
+      ]
+    },
+    {
+      "tag": "gaya_tercepat_tersulit",
+      "patterns": [
+        "Gaya renang tercepat?",
+        "Gaya apa yang paling cepat?",
+        "Gaya paling cepat dalam renang?",
+        "Gaya renang apa yang paling sulit?"
+      ],
+      "responses": [
+        "Gaya bebas umumnya gaya tercepat karena aturannya paling longgar dan perenang bisa memakai teknik yang paling efisien. Sedangkan Gaya dada sering dianggap paling sulit dikuasai karena aturan geraknya ketat, walaupun tingkat kesulitan tiap gaya berbeda bagi tiap perenang."
+      ]
+    },
+    {
+      "tag": "beda_dada_bebas",
+      "patterns": [
+        "Apa bedanya gaya dada dan gaya bebas?",
+        "Apa bedanya gaya dada dengan gaya bebas?",
+        "Apa bedanya gaya bebas dengan gaya dada?",
+        "Perbedaan gaya dada dan bebas?"
+      ],
+      "responses": [
+        "Gaya dada menggunakan gerakan tangan dan kaki yang simetris seperti katak. Gaya bebas umumnya menggunakan gerakan kaki naik turun dan kayuhan tangan bergantian. Saat berbalik dan finis, gaya dada wajib menyentuh dinding dengan dua tangan bersamaan, sedangkan gaya bebas cukup dengan satu tangan."
+      ]
+    },
+    {
+      "tag": "beda_kupu_punggung",
+      "patterns": [
+        "Apa bedanya gaya kupu-kupu dan gaya punggung?",
+        "Apa bedanya gaya kupu-kupu dengan gaya punggung?",
+        "Beda gaya kupu-kupu dan gaya punggung?",
+        "Perbedaan gaya kupu-kupu dan punggung?"
+      ],
+      "responses": [
+        "Gaya kupu-kupu dilakukan telungkup dengan kedua lengan bergerak serentak, diayun ke depan di atas air, disertai tendangan lumba-lumba serentak, dan start dari balok. Gaya punggung dilakukan telentang dengan kayuhan tangan bergantian dan kaki naik turun, dan start dari dalam air."
+      ]
+    },
+    {
+      "tag": "beda_kupu_dada",
+      "patterns": [
+        "Apa bedanya gaya kupu-kupu dan gaya dada?",
+        "Apa bedanya gaya kupu-kupu dengan gaya dada?",
+        "Beda gaya kupu-kupu dan gaya dada?",
+        "Perbedaan gaya kupu-kupu dan dada?"
+      ],
+      "responses": [
+        "Keduanya sama-sama menggerakkan kedua lengan secara serentak dan menyentuh dinding dengan dua tangan. Bedanya, pada gaya kupu-kupu lengan diayun ke depan di atas air dengan tendangan lumba-lumba, sedangkan pada gaya dada lengan kembali ke depan di bawah permukaan air dengan tendangan seperti katak."
+      ]
+    },
+    {
+      "tag": "beda_punggung_dada",
+      "patterns": [
+        "Apa bedanya gaya punggung dan gaya dada?",
+        "Apa bedanya gaya punggung dengan gaya dada?",
+        "Beda gaya punggung dan gaya dada?",
+        "Perbedaan gaya punggung dan dada?"
+      ],
+      "responses": [
+        "Gaya punggung dilakukan telentang, lengan mengayuh bergantian, kaki naik turun, start dari dalam air, dan dinding cukup disentuh satu tangan. Gaya dada dilakukan telungkup dengan gerakan tangan dan kaki serentak seperti katak, start dari balok, dan dinding disentuh dengan dua tangan."
+      ]
+    },
+    {
+      "tag": "beda_kupu_bebas",
+      "patterns": [
+        "Apa bedanya gaya kupu-kupu dan gaya bebas?",
+        "Apa bedanya gaya kupu-kupu dengan gaya bebas?",
+        "Beda gaya kupu-kupu dan gaya bebas?",
+        "Perbedaan gaya kupu-kupu dan bebas?"
+      ],
+      "responses": [
+        "Pada gaya kupu-kupu, kedua lengan bergerak serentak di atas air dan kaki menendang lumba-lumba secara serentak. Pada gaya bebas, lengan mengayuh bergantian dan kaki umumnya naik turun, dan perenang sebenarnya boleh memakai gaya apa saja. Gaya kupu-kupu juga wajib menyentuh dinding dengan dua tangan, sedangkan gaya bebas tidak."
+      ]
+    },
+    {
+      "tag": "beda_punggung_bebas",
+      "patterns": [
+        "Apa bedanya gaya punggung dan gaya bebas?",
+        "Apa bedanya gaya punggung dengan gaya bebas?",
+        "Beda gaya punggung dan gaya bebas?",
+        "Perbedaan gaya punggung dan bebas?"
+      ],
+      "responses": [
+        "Keduanya memakai kayuhan tangan bergantian dan kaki naik turun. Bedanya ada pada posisi tubuh dan start: gaya punggung dilakukan telentang dan start dari dalam air, sedangkan gaya bebas umumnya dilakukan telungkup dan start dengan menyelam dari balok."
+      ]
+    },
+    {
+      "tag": "beda_keempat_gaya",
+      "patterns": [
+        "Perbedaan gaya renang?",
+        "Beda antar gaya renang?",
+        "Apa bedanya gaya renang?",
+        "Jelaskan perbedaan keempat gaya renang."
+      ],
+      "responses": [
+        "Ringkasnya: gaya bebas boleh memakai gaya apa saja (umumnya crawl dengan tangan bergantian); gaya punggung dilakukan telentang dan start dari dalam air; gaya dada memakai gerakan tangan dan kaki serentak seperti katak; gaya kupu-kupu memakai kedua lengan serentak di atas air dan tendangan lumba-lumba."
+      ]
+    },
+    {
+      "tag": "aturan_start",
+      "patterns": [
+        "Bagaimana cara start lomba renang?",
+        "Cara start renang?",
+        "Aturan start renang?",
+        "Bagaimana aturan memulai perlombaan renang?"
+      ],
+      "responses": [
+      "Gaya bebas, gaya dada, dan gaya kupu-kupu dimulai dari atas block start dengan melompat ke dalam kolam, sedangkan gaya punggung dimulai dari dalam air. Pada semua gaya, perenang harus mengikuti aba-aba starter, diam sepenuhnya setelah aba-aba bersiap, dan tidak memulai gerakan sebelum sinyal start berbunyi."
+      ]
+    },
+    {
+      "tag": "start_bebas",
+      "patterns": [
+        "Start gaya bebas?",
+        "Bagaimana start gaya bebas?",
+        "Cara start gaya bebas?",
+        "Dari mana start gaya bebas?"
+      ],
+      "responses": [
+        "Gaya bebas, gaya dada, dan gaya kupu-kupu dimulai dari atas block start dengan melompat ke dalam kolam, sedangkan gaya punggung dimulai dari dalam air. Pada semua gaya, perenang harus mengikuti aba-aba starter, diam sepenuhnya setelah aba-aba bersiap, dan tidak memulai gerakan sebelum sinyal start berbunyi."
+      ]
+      },
+    {
+      "tag": "start_punggung",
+      "patterns": [
+        "Start gaya punggung?",
+        "Bagaimana start gaya punggung?",
+        "Cara start gaya punggung?",
+        "Dari mana start gaya punggung?"
+      ],
+      "responses": [
+      "Gaya bebas, gaya dada, dan gaya kupu-kupu dimulai dari atas block start dengan melompat ke dalam kolam, sedangkan gaya punggung dimulai dari dalam air. Pada semua gaya, perenang harus mengikuti aba-aba starter, diam sepenuhnya setelah aba-aba bersiap, dan tidak memulai gerakan sebelum sinyal start berbunyi."
+      ]
+      },
+    {
+      "tag": "start_dada",
+      "patterns": [
+        "Start gaya dada?",
+        "Bagaimana start gaya dada?",
+        "Cara start gaya dada?",
+        "Dari mana start gaya dada?"
+      ],
+      "responses": [
+      "Gaya bebas, gaya dada, dan gaya kupu-kupu dimulai dari atas block start dengan melompat ke dalam kolam, sedangkan gaya punggung dimulai dari dalam air. Pada semua gaya, perenang harus mengikuti aba-aba starter, diam sepenuhnya setelah aba-aba bersiap, dan tidak memulai gerakan sebelum sinyal start berbunyi."
+      ]
+      },
+    {
+      "tag": "start_kupu_kupu",
+      "patterns": [
+        "Start gaya kupu-kupu?",
+        "Bagaimana start gaya kupu-kupu?",
+        "Cara start gaya kupu-kupu?",
+        "Dari mana start gaya kupu-kupu?"
+      ],
+      "responses": [
+        "Gaya kupu-kupu dimulai dengan menyelam dari block start. Setelah start, perenang boleh menendang lumba-lumba di bawah air, tetapi kepala harus sudah muncul di permukaan paling lambat di tanda 15 meter."
+      ]
+    },
+    {
+      "tag": "perbedaan_start",
+      "patterns": [
+        "Gaya apa yang start dari dalam air?",
+        "Start dari mana?",
+        "Start di dalam air?",
+        "Apa perbedaan start tiap gaya?"
+      ],
+      "responses": [
+      "Gaya bebas, gaya dada, dan gaya kupu-kupu dimulai dari atas blockk start dengan melompat ke dalam kolam, sedangkan gaya punggung dimulai dari dalam air. Pada semua gaya, perenang harus mengikuti aba-aba starter, diam sepenuhnya setelah aba-aba bersiap, dan tidak memulai gerakan sebelum sinyal start berbunyi."
+      ]
+      },
+    {
+      "tag": "aba_aba_start",
+      "patterns": [
+        "Urutan aba-aba start?",
+        "Apa itu take your marks?",
+        "Take your marks artinya apa?",
+        "Bagaimana urutan aba-aba perlombaan?"
+      ],
+      "responses": [
+        "Wasit memberi tanda dengan peluit, lalu perenang naik ke block start (atau masuk ke air untuk gaya punggung). Starter kemudian memberi aba-aba \"Take your marks\" dan perenang harus diam sepenuhnya. Perenang berangkat saat sinyal start berbunyi."
+      ]
+    },
+    {
+      "tag": "start_curang",
+      "patterns": [
+        "Apa itu start curang?",
+        "Start curang?",
+        "False start?",
+        "Apa akibat berangkat sebelum aba-aba?"
+      ],
+      "responses": [
+        "Start curang terjadi saat perenang bergerak atau berangkat sebelum sinyal start. Dengan aturan satu kali start, perenang itu langsung didiskualifikasi."
+      ]
+    },
+    {
+      "tag": "diskualifikasi",
+      "patterns": [
+        "Apa yang membuat perenang didiskualifikasi?",
+        "Diskualifikasi?",
+        "Penyebab diskualifikasi renang?",
+        "Apa saja pelanggaran dalam lomba renang?"
+      ],
+      "responses": [
+        "Perenang dapat didiskualifikasi jika berangkat sebelum sinyal start, tidak menyentuh dinding saat berbalik atau finis, tidak menyelesaikan jarak lomba, menghalangi perenang lain, atau melanggar ketentuan gerakan gaya yang dilombakan, misalnya lengan bergantian pada gaya kupu-kupu atau tendangan yang salah pada gaya dada."
+      ]
+    },
+    {
+      "tag": "diskualifikasi_bebas",
+      "patterns": [
+        "Perenang gaya bebas didiskualifikasi?",
+        "Gaya bebas didiskualifikasi?",
+        "Diskualifikasi gaya bebas?",
+        "Apa pelanggaran gaya bebas?"
+      ],
+      "responses": [
+        "Pada gaya bebas, perenang dapat didiskualifikasi antara lain karena berjalan atau menolak dasar kolam, menarik tali lintasan, tidak menyentuh dinding saat berbalik, atau keluar dari kolam sebelum jarak selesai. Start terlalu awal juga berlaku untuk semua gaya."
+      ]
+    },
+    {
+      "tag": "diskualifikasi_punggung",
+      "patterns": [
+        "Perenang gaya punggung didiskualifikasi?",
+        "Gaya punggung didiskualifikasi?",
+        "Diskualifikasi gaya punggung?",
+        "Apa pelanggaran gaya punggung?"
+      ],
+      "responses": [
+        "Pada gaya punggung, perenang dapat didiskualifikasi antara lain karena tidak berada dalam posisi telentang (di luar putaran balik), tidak telentang saat finis, atau kepala tidak muncul di permukaan air paling lambat di tanda 15 meter."
+      ]
+    },
+    {
+      "tag": "diskualifikasi_dada",
+      "patterns": [
+        "Perenang gaya dada didiskualifikasi?",
+        "Gaya dada didiskualifikasi?",
+        "Diskualifikasi gaya dada?",
+        "Apa pelanggaran gaya dada?"
+      ],
+      "responses": [
+        "Pada gaya dada, perenang dapat didiskualifikasi antara lain karena gerakan lengan bergantian, tendangan yang tidak sesuai ketentuan gaya dada, dua tarikan atau dua tendangan dalam satu siklus, kepala tidak muncul di permukaan pada tiap siklus, atau menyentuh dinding hanya dengan satu tangan saat berbalik dan finis."
+      ]
+    },
+    {
+      "tag": "diskualifikasi_kupu_kupu",
+      "patterns": [
+        "Perenang gaya kupu-kupu didiskualifikasi?",
+        "Gaya kupu-kupu didiskualifikasi?",
+        "Diskualifikasi gaya kupu-kupu?",
+        "Apa pelanggaran gaya kupu-kupu?"
+      ],
+      "responses": [
+        "Pada gaya kupu-kupu, perenang dapat didiskualifikasi antara lain karena gerakan lengan bergantian, tendangan gunting atau bergantian, lengan kembali ke depan di bawah air, atau menyentuh dinding hanya dengan satu tangan saat berbalik dan finis."
+      ]
+    },
+    {
+      "tag": "penentu_diskualifikasi",
+      "patterns": [
+        "Siapa yang menentukan diskualifikasi?",
+        "Siapa yang menyatakan perenang didiskualifikasi?",
+        "Hakim renang?",
+        "Siapa yang berhak mendiskualifikasi perenang?"
+      ],
+      "responses": [
+        "Pelanggaran diamati oleh hakim di sisi kolam, seperti hakim gaya dan hakim balik. Keputusan diskualifikasi ditetapkan oleh wasit (referee) berdasarkan laporan hakim."
+      ]
+    },
+    {
+      "tag": "sentuhan_dinding",
+      "patterns": [
+        "Cara menyentuh dinding saat finis?",
+        "Sentuhan dinding finis?",
+        "Sentuh dinding dengan satu tangan?",
+        "Gaya apa yang harus menyentuh dinding dengan dua tangan?"
+      ],
+      "responses": [
+        "Pada gaya dada dan kupu-kupu, dinding harus disentuh dengan dua tangan bersamaan saat berbalik dan finis. Pada gaya bebas dan punggung, satu tangan sudah cukup. Pada gaya punggung, perenang harus dalam posisi telentang saat finis."
+      ]
+    },
+    {
+      "tag": "putaran_balik",
+      "patterns": [
+        "Cara berbalik saat renang?",
+        "Aturan putaran balik?",
+        "Apa itu flip turn?",
+        "Bagaimana cara melakukan putaran balik?"
+      ],
+      "responses": [
+        "Pada gaya dada dan kupu-kupu, perenang menyentuh dinding dengan dua tangan bersamaan sebelum berbalik. Pada gaya bebas, perenang harus menyentuh dinding dengan bagian tubuh mana saja, sering lewat guling balik (flip turn). Pada gaya punggung, perenang boleh berputar ke posisi telungkup hanya sebagai bagian dari putaran balik yang berkelanjutan."
+      ]
+    },
+    {
+      "tag": "batas_15_meter",
+      "patterns": [
+        "Aturan 15 meter?",
+        "Kenapa kepala harus muncul di 15 meter?",
+        "Batas 15 meter setelah start?",
+        "Berapa batas berenang di bawah air?"
+      ],
+      "responses": [
+        "Setelah start dan setelah setiap putaran balik, kepala perenang harus sudah muncul di permukaan air paling lambat di tanda 15 meter."
+      ]
+    },
+    {
+      "tag": "estafet",
+      "patterns": [
+        "Apa itu estafet renang?",
+        "Aturan estafet renang?",
+        "Cara estafet renang?",
+        "Bagaimana urutan estafet gaya ganti?"
+      ],
+      "responses": [
+        "Pada estafet, empat perenang berenang bergantian. Perenang berikutnya baru boleh berangkat setelah rekan setimnya menyentuh dinding. Berangkat terlalu awal membuat seluruh tim didiskualifikasi. Pada estafet gaya ganti, urutannya punggung, dada, kupu-kupu, lalu gaya bebas."
+      ]
+    },
+    {
+      "tag": "jarak_lomba",
+      "patterns": [
+        "Nomor lomba renang apa saja?",
+        "Jarak lomba renang?",
+        "Berapa jarak lomba renang?",
+        "Apa saja nomor perlombaan renang?"
+      ],
+      "responses": [
+        "Jarak yang umum dilombakan: gaya bebas 50, 100, 200, 400, 800, dan 1500 meter; gaya punggung, dada, dan kupu-kupu masing-masing 50, 100, dan 200 meter; gaya ganti perorangan 200 dan 400 meter. Di Olimpiade, nomor 50 meter untuk gaya punggung, dada, dan kupu-kupu tidak dipertandingkan."
+      ]
+    },
+    {
+      "tag": "ukuran_kolam",
+      "patterns": [
+        "Ukuran kolam renang olimpiade?",
+        "Panjang kolam renang lomba?",
+        "Kolam renang olimpiade berapa meter?",
+        "Berapa lebar kolam renang olimpiade?"
+      ],
+      "responses": [
+        "Kolam renang berukuran olimpiade panjangnya 50 meter dan lebarnya 25 meter, dengan 10 lintasan. Setiap lintasan lebarnya 2,5 meter."
+      ]
+    },
+    {
+      "tag": "kolam_pendek_panjang",
+      "patterns": [
+        "Kolam pendek dan kolam panjang?",
+        "Beda kolam 25 meter dan 50 meter?",
+        "Apa itu kolam panjang?",
+        "Apa perbedaan short course dan long course?"
+      ],
+      "responses": [
+        "Lomba renang dilakukan di kolam panjang (long course) sepanjang 50 meter, atau kolam pendek (short course) sepanjang 25 meter. Di kolam pendek, perenang berbalik lebih sering sehingga catatan waktunya biasanya lebih cepat."
+      ]
+    },
+    {
+      "tag": "perlengkapan",
+      "patterns": [
+        "Perlengkapan renang?",
+        "Alat renang apa saja?",
+        "Peralatan renang pemula?",
+        "Apa saja perlengkapan untuk berenang?"
+      ],
+      "responses": [
+        "Perlengkapan dasar renang adalah pakaian renang, kacamata renang untuk melindungi mata dan memperjelas penglihatan di dalam air, dan topi renang untuk mengurangi hambatan air serta menjaga rambut. Dalam lomba resmi, pakaian renang harus sesuai ketentuan World Aquatics."
+      ]
+    },
+    {
+      "tag": "teknik_pernapasan",
+      "patterns": [
+        "Cara bernapas saat berenang?",
+        "Teknik pernapasan renang?",
+        "Bagaimana bernapas gaya bebas?",
+        "Bagaimana cara mengatur napas saat berenang?"
+      ],
+      "responses": [
+        "Pada gaya bebas, perenang biasanya menarik napas dengan memutar kepala ke samping di sela kayuhan lengan, lalu mengembuskan napas ke dalam air. Pada gaya dada, kepala harus muncul di permukaan pada setiap siklus gerakan. Pada gaya punggung, wajah selalu berada di atas air sehingga napas lebih bebas."
+      ]
+    },
+    {
+      "tag": "salam",
+      "patterns": [
+        "Halo",
+        "Hai",
+        "Hay",
+        "Selamat pagi",
+        "Selamat siang",
+        "Selamat sore"
+      ],
+      "responses": [
+        "Halo! Saya RenangPedia. Saya bisa menjelaskan gaya renang dan aturan dasar perlombaan. Silakan pilih atau tanyakan topik."
+      ]
+    },
+    {
+      "tag": "perpisahan",
+      "patterns": [
+        "Dadah",
+        "Sampai jumpa",
+        "Bye",
+        "Sampai nanti",
+        "Selamat tinggal"
+      ],
+      "responses": [
+        "Sampai jumpa! Semoga sukses di kolam renang."
+      ]
+    },
+    {
+      "tag": "terima_kasih",
+      "patterns": [
+        "Terima kasih",
+        "Makasih",
+        "Makasih banyak",
+        "Terima kasih banyak"
+      ],
+      "responses": [
+        "Sama-sama! Senang bisa membantu."
+      ]
+    },
+    {
+      "tag": "identitas",
+      "patterns": [
+        "Siapa kamu?",
+        "Kamu siapa?",
+        "Nama kamu siapa?",
+        "Apa nama chatbot ini?"
+      ],
+      "responses": [
+        "Saya RenangPedia, chatbot informasi gaya dan aturan dasar renang. Tanyakan soal gaya renang, perbedaan gaya, aturan start, atau diskualifikasi."
+      ]
+    },
+    {
+      "tag": "waktu",
+      "patterns": [
+        "Jam berapa sekarang?",
+        "Sekarang jam berapa?",
+        "Tanggal berapa hari ini?",
+        "Hari ini tanggal berapa?"
+      ],
+      "responses": [
+        "Sekarang pukul {waktu}, tanggal {tanggal}."
+      ]
+    },
+    {
+      "tag": "pertanyaan_tidak_dikenali",
+      "patterns": [
+        "Pertanyaan di luar topik",
+        "Saya ingin bertanya hal lain",
+        "Bisakah membahas topik lain?"
+      ],
+      "responses": [
+        "Maaf, saya belum memahami pertanyaan itu. Coba tanyakan tentang gaya renang, perbedaan gaya, aturan start, atau diskualifikasi."
+      ]
+    }
+  ]
+}

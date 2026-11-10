@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+
+{% block title %}RenangPedia - Chatbot Informasi Renang{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <h1>Selamat Datang di RenangPedia 🏊</h1>
+  <p>
+    Temukan informasi seputar gaya renang, teknik dasar,
+    dan aturan perlombaan renang melalui chatbot interaktif.
+  </p>
+</section>
+
+<section class="theme-grid">
+  {% for t in themes %}
+  <a
+    class="theme-card"
+    href="{{ url_for('chat_page', theme_id=t.id) }}"
+    style="--card: {{ t.color }};"
+  >
+    <div class="theme-avatar">{{ t.avatar }}</div>
+
+    <h2>{{ t.name }}</h2>
+
+    <p>{{ t.description }}</p>
+
+    <span class="theme-meta">
+      {{ t.intents | length }} topik informasi
+    </span>
+
+    <span class="theme-meta">
+      Mulai bertanya →
+    </span>
+  </a>
+  {% endfor %}
+</section>
+
+{% endblock %}

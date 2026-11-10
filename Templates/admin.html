@@ -1,0 +1,112 @@
+
+{% extends "base.html" %}
+
+{% block title %}Statistik RenangPedia{% endblock %}
+{% block color %}{{ theme.color }}{% endblock %}
+
+{% block content %}
+<section class="admin">
+
+  <h1>{{ theme.avatar }} Statistik RenangPedia</h1>
+
+  <p class="muted">
+    Halaman ini digunakan untuk mengevaluasi kinerja chatbot,
+    melihat pertanyaan yang sering diajukan, dan menemukan
+    pertanyaan yang belum dikenali.
+    Ambang pencocokan saat ini: {{ threshold }}.
+  </p>
+
+  <div class="stat-grid">
+
+    <div class="stat">
+      <span class="stat-num">{{ summary.total }}</span>
+      <span>Jumlah pertanyaan</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-num">{{ summary.persen_dikenali }}%</span>
+      <span>Berhasil dikenali</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-num">{{ summary.tidak_dikenali }}</span>
+      <span>Tidak dikenali</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-num">{{ summary.sesi }}</span>
+      <span>Jumlah sesi</span>
+    </div>
+
+  </div>
+
+  <h2>Jumlah Pertanyaan per Intent</h2>
+
+  {% if stats %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Intent</th>
+        <th>Jumlah</th>
+        <th>Proporsi</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for s in stats %}
+      <tr>
+        <td>{{ s.intent }}</td>
+        <td>{{ s.jumlah }}</td>
+        <td>
+          <div class="bar">
+            <span style="width: {{ (100 * s.jumlah / summary.total) | round(1) if summary.total else 0 }}%"></span>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% else %}
+  <p class="muted">
+    Belum ada percakapan untuk RenangPedia.
+  </p>
+  {% endif %}
+
+  <h2>Pertanyaan yang Belum Dikenali</h2>
+
+  {% if unknown %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Pertanyaan</th>
+        <th>Skor</th>
+        <th>Waktu</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for u in unknown %}
+      <tr>
+        <td>{{ u.text }}</td>
+        <td>{{ "%.2f" | format(u.score or 0) }}</td>
+        <td>{{ u.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% else %}
+  <p class="muted">
+    Belum ada pertanyaan yang tidak dikenali.
+  </p>
+  {% endif %}
+
+  <p>
+    <a href="{{ url_for('chat_page', theme_id=theme.id) }}">
+      &larr; Kembali ke RenangPedia
+    </a>
+  </p>
+
+</section>
+{% endblock %}

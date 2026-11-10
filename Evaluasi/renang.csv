@@ -1,0 +1,16 @@
+kalimat,intent
+apa saja gaya renang,gaya_renang
+sebutkan macam macam gaya renang,gaya_renang
+bagaimana cara berenang gaya bebas,gaya_bebas
+apa itu gaya punggung,gaya_punggung
+bagaimana gerakan gaya dada,gaya_dada
+apa yang dimaksud gaya kupu kupu,gaya_kupu_kupu
+apa gaya renang paling cepat,gaya_tercepat_tersulit
+bagaimana aturan start renang,aturan_start
+bagaimana posisi start gaya punggung,start_punggung
+apa penyebab perenang didiskualifikasi,diskualifikasi
+berapa ukuran kolam renang,ukuran_kolam
+bagaimana teknik pernapasan saat berenang,teknik_pernapasan
+halo,salam
+terima kasih,terima_kasih
+siapa presiden indonesia,fallback

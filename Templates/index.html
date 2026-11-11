@@ -1,40 +1,86 @@
 
 {% extends "base.html" %}
 
-{% block title %}RenangPedia - Chatbot Informasi Renang{% endblock %}
+{% block title %}RenangPedia · Swimming Club{% endblock %}
 
 {% block content %}
+<section class="home-aquatic">
 
-<section class="hero">
-  <h1>Selamat Datang di RenangPedia 🏊</h1>
-  <p>
-    Temukan informasi seputar gaya renang, teknik dasar,
-    dan aturan perlombaan renang melalui chatbot interaktif.
-  </p>
+    <div class="home-decoration home-bubble-one"></div>
+    <div class="home-decoration home-bubble-two"></div>
+    <div class="home-decoration home-star-one">✦</div>
+    <div class="home-decoration home-star-two">✧</div>
+
+    <div class="home-hero">
+        <div class="home-hero-text">
+            <span class="home-eyebrow">🌊 YOUR SWIMMING COMPANION</span>
+
+            <h1>
+                Explore the<br>
+                <span>World of Swimming!</span>
+            </h1>
+
+            <p>
+                Belajar renang jadi lebih mudah dan menyenangkan.
+                Temukan informasi tentang teknik, gaya, dan aturan
+                renang bersama RenangPedia!
+            </p>
+
+            <div class="home-note">
+                🐳 Teman belajar renangmu siap membantu!
+            </div>
+        </div>
+
+        <div class="home-hero-art">
+            <div class="home-art-circle">
+                <div class="home-whale">🐳</div>
+                <span class="home-hi">Let's swim!</span>
+            </div>
+            <span class="home-art-star">✦</span>
+            <span class="home-art-bubble bubble-a"></span>
+            <span class="home-art-bubble bubble-b"></span>
+        </div>
+    </div>
+
+    <div class="home-section-heading">
+        <div>
+            <span class="home-section-label">DIVE INTO KNOWLEDGE</span>
+            <h2>Kenalan dengan RenangPedia!</h2>
+        </div>
+        <span class="home-heading-icon">🏊</span>
+    </div>
+
+    <div class="home-info-grid">
+        <article class="home-info-card">
+            <div class="home-info-icon icon-blue">🏊‍♂️</div>
+            <h3>Gaya Renang</h3>
+            <p>Kenali berbagai macam gaya renang dan karakteristiknya.</p>
+        </article>
+
+        <article class="home-info-card">
+            <div class="home-info-icon icon-yellow">💦</div>
+            <h3>Teknik Dasar</h3>
+            <p>Pelajari teknik dasar untuk memahami olahraga renang.</p>
+        </article>
+
+        <article class="home-info-card">
+            <div class="home-info-icon icon-pink">🏅</div>
+            <h3>Aturan Renang</h3>
+            <p>Ketahui aturan dan ketentuan dalam perlombaan renang.</p>
+        </article>
+    </div>
+
+    <section class="home-chat-banner">
+        <div class="home-banner-mascot">🐬</div>
+        <div class="home-banner-text">
+            <h2>Punya pertanyaan seputar renang?</h2>
+            <p>Yuk, ngobrol dan temukan jawabannya bersama RenangPedia!</p>
+        </div>
+        <a href="{{ url_for('chat_page', theme_id='renangpedia') }}"
+           class="home-banner-button">
+            Tanya Sekarang 
+        </a>
+    </section>
+
 </section>
-
-<section class="theme-grid">
-  {% for t in themes %}
-  <a
-    class="theme-card"
-    href="{{ url_for('chat_page', theme_id=t.id) }}"
-    style="--card: {{ t.color }};"
-  >
-    <div class="theme-avatar">{{ t.avatar }}</div>
-
-    <h2>{{ t.name }}</h2>
-
-    <p>{{ t.description }}</p>
-
-    <span class="theme-meta">
-      {{ t.intents | length }} topik informasi
-    </span>
-
-    <span class="theme-meta">
-      Mulai bertanya →
-    </span>
-  </a>
-  {% endfor %}
-</section>
-
 {% endblock %}

@@ -1,45 +1,68 @@
+# 🐳 RenangPedia – Chatbot Informasi Gaya dan Aturan Dasar Renang
 
-# 🏊 RenangPedia
+RenangPedia adalah aplikasi chatbot berbasis web yang dikembangkan menggunakan **Python dan Flask** untuk memberikan informasi seputar dunia renang, khususnya gaya renang, teknik dasar, serta aturan perlombaan renang.
 
-### Chatbot Informasi Gaya dan Aturan Dasar Renang
+Chatbot ini dirancang sebagai teman belajar virtual yang membantu pengguna memperoleh informasi mengenai olahraga renang melalui percakapan interaktif.
 
-RenangPedia merupakan aplikasi chatbot berbasis web yang dikembangkan menggunakan Python dan Flask. Aplikasi ini dirancang untuk memberikan informasi seputar gaya renang, teknik dasar, serta aturan dalam perlombaan renang.
+## 📌 Tentang Project
 
-Chatbot menggunakan pendekatan pencocokan intent untuk mengenali pertanyaan pengguna dan memberikan jawaban berdasarkan basis pengetahuan yang telah disediakan.
+RenangPedia dikembangkan sebagai proyek Chatbot Tematik dengan pendekatan Natural Language Processing (NLP) dan pencocokan intent untuk mengenali pertanyaan pengguna berdasarkan basis pengetahuan yang telah disiapkan.
 
----
+Aplikasi ini memiliki tampilan bertema **Cute Aquatic** dengan ilustrasi paus dan nuansa warna biru yang menggambarkan dunia perairan.
 
 ## ✨ Fitur Utama
 
-- **Informasi Gaya Renang** – Penjelasan mengenai gaya bebas, gaya dada, gaya punggung, dan gaya kupu-kupu.
-- **Aturan Start** – Informasi mengenai aturan dan prosedur start dalam perlombaan renang.
-- **Diskualifikasi** – Penjelasan mengenai pelanggaran yang dapat menyebabkan diskualifikasi.
-- **Aturan Perlombaan** – Informasi mengenai sentuhan dinding, putaran balik, estafet, dan ketentuan perlombaan lainnya.
-- **Riwayat Percakapan** – Menyimpan dan menampilkan riwayat percakapan pengguna.
-- **Mode Penjelasan** – Menampilkan kandidat intent dan skor pencocokan pertanyaan.
-- **Statistik Chatbot** – Menampilkan statistik penggunaan dan hasil pengenalan pertanyaan.
+### 1. Chatbot Informasi Renang
+- Menjawab pertanyaan seputar gaya renang.
+- Memberikan informasi teknik dasar renang.
+- Menjelaskan aturan dan ketentuan perlombaan renang.
+- Mengenali berbagai variasi pertanyaan pengguna.
+- Memberikan respons berdasarkan basis pengetahuan chatbot.
 
----
+### 2. Mode Belajar
+- Menampilkan informasi tambahan mengenai hasil pencocokan pertanyaan.
+- Membantu pengguna memahami proses pengenalan pertanyaan oleh chatbot.
+
+### 3. Riwayat Percakapan
+- Menyimpan riwayat percakapan pengguna.
+- Menampilkan percakapan selama sesi berlangsung.
+- Menyediakan fitur untuk menghapus riwayat percakapan.
+
+### 4. Dashboard Admin
+- Menampilkan jumlah pertanyaan yang masuk.
+- Menampilkan persentase pertanyaan yang berhasil dikenali.
+- Menampilkan jumlah pertanyaan yang tidak dikenali.
+- Menampilkan jumlah sesi percakapan.
+- Menampilkan statistik pertanyaan berdasarkan intent.
+- Menampilkan pertanyaan yang belum dikenali chatbot.
+
+## 📚 Ruang Lingkup Informasi
+
+Basis pengetahuan RenangPedia mencakup 43 intent yang membahas beberapa kategori berikut:
+
+- Gaya renang dan perbedaannya.
+- Aturan start perlombaan renang.
+- Teknik dan gerakan dasar renang.
+- Aturan perlombaan renang.
+- Ketentuan diskualifikasi.
+- Informasi umum mengenai olahraga renang.
 
 ## 🛠️ Teknologi yang Digunakan
 
 | Teknologi | Kegunaan |
 |---|---|
 | Python | Bahasa pemrograman utama |
-| Flask | Framework aplikasi web |
+| Flask | Framework pengembangan aplikasi web |
 | HTML | Struktur halaman web |
-| CSS | Tampilan antarmuka |
-| JavaScript | Interaksi chatbot |
+| CSS | Desain dan tampilan antarmuka |
+| JavaScript | Interaksi chatbot pada halaman web |
+| JSON | Penyimpanan basis pengetahuan dan intent |
 | SQLite | Penyimpanan riwayat percakapan |
-| JSON | Penyimpanan basis pengetahuan |
-| CSV | Dataset evaluasi chatbot |
 
----
-
-## 📂 Struktur Proyek
+## 📂 Struktur Project
 
 ```text
-chatbox-RenangPedia-flask/
+chatbot-RenangPedia-flask/
 │
 ├── chatbot/
 │   ├── __init__.py
@@ -49,11 +72,16 @@ chatbox-RenangPedia-flask/
 ├── evaluasi/
 │   └── renang.csv
 │
-├── screenshots/
-│   ├── 01-halaman-utama.png
-│   ├── 02-halaman-chatbot.png
-│   ├── 03-percakapan-chatbot.png
-│   └── 04-halaman-statistik.png
+├── themes/
+│   └── renang.json
+│
+├── templates/
+│   ├── 404.html
+│   ├── admin.html
+│   ├── base.html
+│   ├── chat.html
+│   ├── index.html
+│   └── welcome.html
 │
 ├── static/
 │   ├── css/
@@ -61,38 +89,27 @@ chatbox-RenangPedia-flask/
 │   └── js/
 │       └── chat.js
 │
-├── templates/
-│   ├── 404.html
-│   ├── admin.html
-│   ├── base.html
-│   ├── chat.html
-│   └── index.html
-│
-├── themes/
-│   └── renang.json
-│
 ├── app.py
 ├── cli.py
 ├── evaluate.py
-├── requirements.txt
 ├── README.md
-└── .gitignore
+└── requirements.txt
 ```
 
----
-
 ## 🚀 Instalasi dan Menjalankan Aplikasi
+
+Ikuti langkah-langkah berikut untuk menjalankan RenangPedia di komputer lokal.
 
 ### 1. Clone Repository
 
 ```bash
-git clone URL_REPOSITORY
+git clone https://github.com/della436/chatbot-RenangPedia-flask.git
 ```
 
-### 2. Masuk ke Folder Proyek
+### 2. Masuk ke Folder Project
 
 ```bash
-cd chatbox-RenangPedia-flask
+cd chatbot-RenangPedia-flask
 ```
 
 ### 3. Buat Virtual Environment
@@ -103,25 +120,17 @@ python -m venv venv
 
 ### 4. Aktifkan Virtual Environment
 
-**macOS / Linux:**
+**Windows:**
+```bash
+venv\Scripts\activate
+```
 
+**macOS / Linux:**
 ```bash
 source venv/bin/activate
 ```
 
-**Windows (PowerShell):**
-
-```powershell
-venv\Scripts\Activate.ps1
-```
-
-**Windows (Command Prompt):**
-
-```cmd
-venv\Scripts\activate.bat
-```
-
-### 5. Instal Dependensi
+### 5. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -135,49 +144,48 @@ python app.py
 
 ### 7. Buka Aplikasi
 
-Buka browser dan akses alamat berikut:
+Akses alamat berikut melalui browser:
 
 ```text
-http://127.0.0.1:5000/
+http://127.0.0.1:5000
 ```
 
----
+## 🌐 Halaman Aplikasi
 
-## 💬 Menjalankan Chatbot Melalui Terminal
+| Halaman | URL | Keterangan |
+|---|---|---|
+| Welcome | `/` | Halaman pembuka RenangPedia |
+| Home | `/home` | Halaman utama chatbot |
+| Chatbot | `/chat/renangpedia` | Halaman percakapan dengan chatbot |
+| Admin | `/admin/renangpedia` | Dashboard statistik chatbot |
 
-Selain melalui browser, chatbot juga dapat dijalankan melalui terminal menggunakan perintah:
-
-```bash
-python cli.py
-```
-
-Untuk menampilkan kandidat intent:
-
-```bash
-python cli.py --debug
-```
-
----
+Jika menggunakan konfigurasi `ADMIN_KEY`, akses dashboard admin memerlukan parameter kunci admin.
 
 ## 📊 Evaluasi Chatbot
 
-Evaluasi chatbot dapat dilakukan menggunakan dataset yang tersedia pada folder `evaluasi/`.
+RenangPedia menyediakan file evaluasi untuk menguji kemampuan chatbot dalam mengenali pertanyaan berdasarkan intent yang telah ditentukan.
 
-Jalankan perintah:
+File evaluasi tersedia pada:
+
+```text
+evaluasi/renang.csv
+```
+
+Pengujian dapat dijalankan menggunakan:
 
 ```bash
 python evaluate.py
 ```
 
-Untuk menguji beberapa nilai ambang pencocokan:
+Hasil evaluasi digunakan untuk mengetahui kemampuan chatbot dalam mengenali pertanyaan serta mengidentifikasi bagian basis pengetahuan yang perlu diperbaiki.
 
-```bash
-python evaluate.py --sweep
-```
----
+## 🎨 Tampilan Antarmuka
 
-## 👩‍💻 Pengembangan
+RenangPedia menggunakan konsep desain **Cute Aquatic** dengan karakteristik:
+- Dominasi warna biru dan putih.
+- Ilustrasi maskot paus.
+- Elemen dekoratif gelembung air.
+- Tampilan sederhana, interaktif, dan responsif.
+- Antarmuka yang dirancang agar nyaman digunakan.
 
-**RenangPedia – Chatbot Informasi Gaya dan Aturan Dasar Renang**
-
-Dikembangkan sebagai proyek praktikum aplikasi web.
+*RenangPedia – Learn swimming, one question at a time. 🐳*

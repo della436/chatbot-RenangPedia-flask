@@ -2,30 +2,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}RenangPedia{% endblock %}</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Pengaturan karakter dan responsivitas halaman -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Judul halaman dapat diatur oleh masing-masing template -->
+    <title>{% block title %}RenangPedia{% endblock %}</title>
+
+    <!-- Menghubungkan Google Fonts untuk menggunakan font Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Menghubungkan file CSS utama RenangPedia -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body style="--primary: {% block color %}#087FAE{% endblock %};">
+<!--
+    Body merupakan bagian utama halaman.
+    Variabel --primary digunakan untuk menentukan warna utama
+    yang dapat disesuaikan oleh masing-masing halaman.
+-->
+<body style="--primary: {% block color %}#20A8C5{% endblock %};">
 
-  <header class="topbar">
-    <a href="{{ url_for('index') }}" class="brand">
-      🏊 RenangPedia
-    </a>
-    {% block header_extra %}{% endblock %}
-  </header>
+    <!-- ==========================================
+         HEADER / NAVBAR
+         Menampilkan identitas dan navigasi RenangPedia
+    =========================================== -->
+    <header class="topbar">
 
-  <main class="container">
-    {% block content %}{% endblock %}
-  </main>
+        <!-- Logo dan nama aplikasi yang mengarah ke halaman utama -->
+        <a href="{{ url_for('home') }}" class="brand">
 
-  <footer class="footer">
-    RenangPedia · Chatbot Informasi Gaya dan Aturan Dasar Renang
-  </footer>
+            <!-- Ikon maskot RenangPedia -->
+            <span class="brand-icon">🐳</span>
 
-  {% block scripts %}{% endblock %}
+            <!-- Nama aplikasi -->
+            <span>
+                Renang<span class="brand-highlight">Pedia</span>
+            </span>
+
+        </a>
+
+        <!--
+            Blok tambahan untuk setiap halaman.
+            Contohnya: tombol Statistik dan Hapus Riwayat
+            pada halaman percakapan chatbot.
+        -->
+        {% block header_extra %}{% endblock %}
+
+    </header>
+
+
+    <!-- ==========================================
+         KONTEN UTAMA
+         Bagian ini menampilkan isi dari setiap halaman
+         yang menggunakan base.html.
+    =========================================== -->
+    <main class="container">
+
+        <!-- Konten akan diisi oleh template turunan -->
+        {% block content %}{% endblock %}
+
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER
+         Menampilkan informasi singkat aplikasi
+    =========================================== -->
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <!-- Identitas aplikasi -->
+            <div class="footer-brand">
+                🐳 RenangPedia
+            </div>
+
+            <!-- Deskripsi singkat aplikasi -->
+            <p>
+                Teman belajar untuk mengenal dunia renang lebih dekat.
+            </p>
+
+            <!-- Informasi hak cipta -->
+            <span>
+                © 2026 RenangPedia · Swimming Learning Companion
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         Blok ini digunakan untuk memuat script
+         tambahan sesuai kebutuhan masing-masing halaman.
+    =========================================== -->
+    {% block scripts %}{% endblock %}
 
 </body>
 </html>

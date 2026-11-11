@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+
+{% block title %}Welcome to RenangPedia{% endblock %}
+
+{% block content %}
+<section class="welcome-page">
+
+    <div class="welcome-bubbles">
+        <span class="bubble bubble-one"></span>
+        <span class="bubble bubble-two"></span>
+        <span class="bubble bubble-three"></span>
+        <span class="bubble bubble-four"></span>
+    </div>
+
+    <div class="welcome-content">
+
+        <div class="welcome-label">
+            <span>✦</span> YOUR FRIENDLY SWIMMING GUIDE
+        </div>
+
+        <div class="welcome-mascot">
+            <div class="mascot-sparkle sparkle-one">✦</div>
+            <div class="mascot-sparkle sparkle-two">✧</div>
+            <div class="mascot-face">🐳</div>
+            <span class="mascot-caption">Hi there!</span>
+        </div>
+
+        <h1>
+            Hello,<br>
+            <span>Swimmer!</span>
+        </h1>
+
+        <p class="welcome-description">
+            Welcome to RenangPedia!
+            Yuk, kenali dunia renang lebih dekat.
+            Temukan informasi tentang gaya renang,
+            teknik dasar, dan aturan perlombaan
+            bersama teman renang virtualmu.
+        </p>
+
+        <a href="/home" class="welcome-button">
+            LET'S DIVE IN!
+            <span>→</span>
+        </a>
+
+        <div class="welcome-note">
+            <span>🌊</span>
+            Learn swimming, one question at a time.
+        </div>
+
+    </div>
+
+    <div class="welcome-decoration decoration-left">✦</div>
+    <div class="welcome-decoration decoration-right">✧</div>
+
+</section>
+{% endblock %}

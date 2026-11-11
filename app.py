@@ -85,18 +85,26 @@ def create_app(config=None):
     # HALAMAN WEB
     # ==================================================
 
+    # Halaman pembuka sebelum masuk ke chatbot
     @app.route("/")
     def index():
+        return render_template("welcome.html")
+
+    # Halaman utama chatbot
+    @app.route("/home")
+    def home():
         return render_template(
             "index.html",
             themes=themes.values()
         )
 
+    # Halaman percakapan chatbot
     @app.route("/chat/<theme_id>")
     def chat_page(theme_id):
         theme = get_theme_or_404(theme_id)
         return render_template("chat.html", theme=theme)
 
+    # Halaman admin
     @app.route("/admin/<theme_id>")
     def admin_page(theme_id):
         check_admin()

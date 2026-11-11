@@ -1,653 +1,1436 @@
 
-/* ================================================================
+/* =========================================================
    RENANGPEDIA
    Chatbot Informasi Gaya dan Aturan Dasar Renang
-   Warna utama diambil dari variabel --primary pada base.html.
-   ================================================================ */
+   Theme: Cute Aquatic - Swimming Club
+   ========================================================= */
 
-/* ---------- Pengaturan dasar ---------- */
+
+/* =========================================================
+   1. PENGATURAN DASAR DAN VARIABEL WARNA
+   ========================================================= */
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-  --blue-dark: #075985;
-  --blue-main: #087FAE;
-  --blue-light: #E0F2FE;
-  --blue-soft: #F0F9FF;
-  --text-dark: #0F172A;
-  --text-muted: #64748B;
-  --border: #E2E8F0;
-  --white: #FFFFFF;
-  --background: #F1F7FA;
-  --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+    --blue-dark: #174D68;
+    --blue-main: #20A8C5;
+    --blue-deep: #1686A8;
+    --blue-light: #E5F8FC;
+    --blue-soft: #F2FBFD;
+
+    --yellow: #FFE59C;
+    --pink: #FFF0F1;
+
+    --text-dark: #174D68;
+    --text-muted: #7896A2;
+
+    --border: #DCEFF3;
+    --white: #FFFFFF;
+    --background: #F0F9FC;
+
+    --shadow: 0 8px 25px rgba(33, 126, 153, 0.08);
+    --radius: 20px;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: var(--background);
-  color: var(--text-dark);
-  line-height: 1.6;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Nunito", "Segoe UI", sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
 button,
 input {
-  font: inherit;
+    font: inherit;
 }
 
 button,
 a {
-  -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* ---------- Header / Navbar ---------- */
+
+/* =========================================================
+   2. NAVBAR DAN HEADER
+   ========================================================= */
 
 .topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 24px;
-  background: var(--primary);
-  color: var(--white);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 25px;
+
+    background: linear-gradient(
+        110deg,
+        #1686A8,
+        #28B6CF
+    );
+
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(32, 168, 197, 0.12);
 }
 
 .brand {
-  color: var(--white);
-  font-size: 20px;
-  font-weight: 800;
-  text-decoration: none;
-  letter-spacing: 0.3px;
+    color: var(--white);
+    font-size: 21px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: -0.4px;
 }
 
 .header-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 
 .btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px 13px;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--white);
-  font-size: 13px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+
+    background: transparent;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s ease;
 }
 
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* ---------- Container dan Footer ---------- */
+
+/* =========================================================
+   3. CONTAINER DAN FOOTER
+   ========================================================= */
 
 .container {
-  flex: 1;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 30px 20px;
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px;
 }
 
 .footer {
-  padding: 16px;
-  color: var(--text-muted);
-  font-size: 13px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  background: var(--white);
+    padding: 16px;
+    color: var(--text-muted);
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    background: #F8FCFD;
 }
 
-/* ---------- Halaman Utama ---------- */
 
-.hero {
-  margin-bottom: 30px;
-  padding: 34px 24px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #E0F2FE, #F0F9FF);
-  text-align: center;
+/* =========================================================
+   4. WELCOME PAGE - CUTE AQUATIC
+   ========================================================= */
+
+.welcome-body {
+    background: #F0F9FC;
 }
 
-.hero h1 {
-  margin: 0 0 10px;
-  color: var(--blue-dark);
-  font-size: 30px;
-  line-height: 1.3;
+.welcome-screen {
+    position: relative;
+    width: min(900px, calc(100% - 40px));
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 55px 25px;
+    border-radius: 0 0 32px 32px;
+
+    background: linear-gradient(
+        145deg,
+        #E6FAFF 0%,
+        #F5FCFD 65%,
+        #FFF9EC 100%
+    );
 }
 
-.hero p {
-  max-width: 650px;
-  margin: 0 auto;
-  color: #475569;
-  font-size: 15px;
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
 }
 
-.theme-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+.welcome-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 19px;
+    border-radius: 30px;
+
+    background: white;
+    color: #1686A8;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+
+    box-shadow: 0 5px 18px rgba(38, 145, 174, 0.09);
 }
 
-.theme-card {
-  display: block;
-  padding: 24px;
-  border-top: 5px solid var(--card);
-  border-radius: 16px;
-  background: var(--white);
-  color: inherit;
-  text-decoration: none;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Maskot paus */
+
+.welcome-mascot {
+    position: relative;
+    width: 150px;
+    height: 145px;
+    margin: 38px auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.theme-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
+.mascot-face {
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: white;
+    font-size: 78px;
+
+    box-shadow: 0 12px 30px rgba(38, 145, 174, 0.15);
 }
 
-.theme-avatar {
-  margin-bottom: 10px;
-  font-size: 42px;
+.mascot-caption {
+    position: absolute;
+    right: -12px;
+    bottom: 8px;
+
+    padding: 9px 15px;
+    border-radius: 20px;
+
+    background: var(--yellow);
+    color: #72551B;
+
+    font-size: 12px;
+    font-weight: 900;
+    transform: rotate(8deg);
 }
 
-.theme-card h2 {
-  margin: 8px 0;
-  color: var(--card);
-  font-size: 21px;
+.mascot-sparkle {
+    position: absolute;
+    color: #F5BD4C;
+    font-size: 25px;
 }
 
-.theme-card p {
-  margin: 8px 0 16px;
-  color: #475569;
-  font-size: 14px;
+.sparkle-one {
+    top: 0;
+    left: -8px;
 }
 
-.theme-meta {
-  display: block;
-  margin-top: 5px;
-  color: var(--text-muted);
-  font-size: 12px;
+.sparkle-two {
+    top: 20px;
+    right: -12px;
+    color: #55BFD3;
 }
 
-/* ---------- Halaman Chat ---------- */
+/* Judul welcome */
+
+.welcome-content h1 {
+    margin: 20px 0;
+
+    color: var(--blue-dark);
+    font-size: clamp(48px, 8vw, 68px);
+    font-weight: 1000;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.welcome-content h1 span {
+    color: var(--blue-main);
+}
+
+.welcome-description {
+    max-width: 440px;
+    margin: 20px auto 28px;
+
+    color: #587887;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Tombol welcome */
+
+.welcome-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    padding: 19px 27px;
+    border-radius: 18px;
+
+    background: var(--blue-main);
+    color: white;
+
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    box-shadow: 0 8px 0 var(--blue-deep);
+    transition: 0.2s ease;
+}
+
+.welcome-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 0 var(--blue-deep);
+}
+
+.welcome-button span {
+    font-size: 19px;
+}
+
+.welcome-note {
+    margin-top: 30px;
+    color: #7B9CA8;
+    font-size: 12px;
+}
+
+/* Gelembung welcome */
+
+.welcome-bubbles .bubble {
+    position: absolute;
+    display: block;
+
+    border: 2px solid rgba(63, 183, 211, 0.25);
+    border-radius: 50%;
+}
+
+.bubble-one {
+    width: 55px;
+    height: 55px;
+    top: 13%;
+    left: 12%;
+}
+
+.bubble-two {
+    width: 25px;
+    height: 25px;
+    top: 25%;
+    right: 15%;
+}
+
+.bubble-three {
+    width: 38px;
+    height: 38px;
+    bottom: 15%;
+    left: 19%;
+}
+
+.bubble-four {
+    width: 18px;
+    height: 18px;
+    bottom: 23%;
+    right: 12%;
+}
+
+
+/* =========================================================
+   5. HALAMAN UTAMA - HOME RENANGPEDIA
+   ========================================================= */
+
+.home-aquatic {
+    position: relative;
+    overflow: hidden;
+
+    padding: 32px;
+    border: 1px solid #E0F1F5;
+    border-radius: 28px;
+
+    background: linear-gradient(
+        145deg,
+        #E8FAFF,
+        #F8FDFF 65%,
+        #FFF9ED
+    );
+}
+
+/* Hero section */
+
+.home-hero {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 20px;
+
+    min-height: 340px;
+    padding: 20px;
+}
+
+.home-eyebrow,
+.home-section-label {
+    color: #269BB8;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+}
+
+.home-hero h1 {
+    margin: 18px 0;
+
+    color: var(--blue-dark);
+    font-size: clamp(36px, 4.5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+.home-hero h1 span {
+    color: var(--blue-main);
+}
+
+.home-hero-text > p {
+    max-width: 440px;
+    color: #648391;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Tombol home */
+
+.home-main-button,
+.home-banner-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    margin-top: 15px;
+    padding: 14px 22px;
+
+    border-radius: 15px;
+    background: var(--blue-main);
+    color: white !important;
+
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+
+    box-shadow: 0 5px 0 var(--blue-deep);
+    transition: 0.2s ease;
+}
+
+.home-main-button:hover,
+.home-banner-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 var(--blue-deep);
+}
+
+.home-note {
+    margin-top: 22px;
+    color: #86A5B0;
+    font-size: 12px;
+}
+
+/* Ilustrasi paus */
+
+.home-hero-art {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 280px;
+}
+
+.home-art-circle {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 235px;
+    height: 235px;
+
+    border-radius: 50%;
+    background: white;
+
+    box-shadow: 0 15px 35px rgba(36, 151, 180, 0.12);
+}
+
+.home-whale {
+    font-size: 120px;
+    transform: rotate(-8deg);
+}
+
+.home-hi {
+    position: absolute;
+    right: -10px;
+    bottom: 30px;
+
+    padding: 9px 16px;
+    border-radius: 20px;
+
+    background: var(--yellow);
+    color: #765A24;
+
+    font-size: 12px;
+    font-weight: 900;
+    transform: rotate(7deg);
+}
+
+.home-art-star {
+    position: absolute;
+    top: 25px;
+    right: 12%;
+    color: #F5BD4C;
+    font-size: 35px;
+}
+
+.home-art-bubble {
+    position: absolute;
+    border: 2px solid #BCEAF4;
+    border-radius: 50%;
+}
+
+.bubble-a {
+    width: 35px;
+    height: 35px;
+    top: 30px;
+    left: 8%;
+}
+
+.bubble-b {
+    width: 22px;
+    height: 22px;
+    right: 8%;
+    bottom: 30px;
+}
+
+/* Dekorasi home */
+
+.home-decoration {
+    position: absolute;
+    pointer-events: none;
+}
+
+.home-bubble-one {
+    width: 55px;
+    height: 55px;
+    left: 2%;
+    bottom: 15%;
+
+    border: 2px solid #C8EDF4;
+    border-radius: 50%;
+}
+
+.home-bubble-two {
+    width: 25px;
+    height: 25px;
+    top: 8%;
+    right: 5%;
+
+    border: 2px solid #C8EDF4;
+    border-radius: 50%;
+}
+
+.home-star-one,
+.home-star-two {
+    color: #F5BD4C;
+    font-size: 28px;
+}
+
+.home-star-one {
+    top: 12%;
+    left: 45%;
+}
+
+.home-star-two {
+    right: 3%;
+    bottom: 28%;
+    color: #53BFD3;
+}
+
+/* Judul kategori */
+
+.home-section-heading {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 30px 5px 18px;
+}
+
+.home-section-heading h2 {
+    margin: 7px 0 0;
+    color: var(--blue-dark);
+    font-size: 22px;
+}
+
+.home-heading-icon {
+    font-size: 34px;
+}
+
+/* Kartu informasi */
+
+.home-info-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.home-info-card {
+    padding: 21px;
+
+    border: 1px solid #E1F1F4;
+    border-radius: 20px;
+
+    background: white;
+    box-shadow: 0 5px 18px rgba(33, 126, 153, 0.05);
+
+    transition: 0.2s ease;
+}
+
+.home-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(33, 126, 153, 0.1);
+}
+
+.home-info-icon {
+    width: 49px;
+    height: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+    font-size: 25px;
+}
+
+.icon-blue {
+    background: #E5F8FC;
+}
+
+.icon-yellow {
+    background: #FFF5D9;
+}
+
+.icon-pink {
+    background: #FFF0F1;
+}
+
+.home-info-card h3 {
+    margin: 15px 0 7px;
+    color: #21647D;
+    font-size: 16px;
+}
+
+.home-info-card p {
+    margin: 0;
+    color: #7B969F;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Banner ajakan chatbot */
+
+.home-chat-banner {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    margin-top: 25px;
+    padding: 20px 23px;
+
+    border-radius: 21px;
+    background: #DFF5FA;
+}
+
+.home-banner-mascot {
+    font-size: 42px;
+}
+
+.home-banner-text {
+    flex: 1;
+}
+
+.home-banner-text h2 {
+    margin: 0 0 5px;
+    color: #185A73;
+    font-size: 17px;
+}
+
+.home-banner-text p {
+    margin: 0;
+    color: #6D929E;
+    font-size: 12px;
+}
+
+.home-banner-button {
+    margin: 0;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   6. HALAMAN PERCAKAPAN CHATBOT
+   ========================================================= */
+
+/* Kartu utama chat */
 
 .chat-card {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 170px);
-  min-height: 500px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: var(--white);
-  box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+
+    height: calc(100vh - 155px);
+    min-height: 530px;
+    overflow: hidden;
+
+    border: 2px solid #DFF3F7;
+    border-radius: 26px;
+
+    background: white;
+    box-shadow: var(--shadow);
 }
 
+/* Header chat */
+
 .chat-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--border);
-  background: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 19px 23px;
+
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(110deg, #E6FAFF, #F8FDFF);
 }
 
 .avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  border-radius: 14px;
-  background: var(--blue-light);
-  font-size: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+
+    border: 2px solid #D6F1F6;
+    border-radius: 20px;
+
+    background: white;
+    font-size: 34px;
+
+    box-shadow: 0 4px 12px rgba(32, 168, 197, 0.1);
 }
 
 .chat-title {
-  flex: 1;
-  min-width: 0;
+    flex: 1;
+    min-width: 0;
 }
 
 .chat-header h1 {
-  margin: 0;
-  color: var(--primary);
-  font-size: 19px;
+    margin: 0;
+    color: var(--blue-deep);
+    font-size: 21px;
+    font-weight: 900;
 }
 
 .chat-header p {
-  margin: 2px 0 0;
-  color: var(--text-muted);
-  font-size: 13px;
+    margin: 2px 0 0;
+    color: var(--text-muted);
+    font-size: 13px;
 }
 
+/* Mode belajar */
+
 .learn-toggle {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #475569;
-  font-size: 13px;
-  cursor: pointer;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 13px;
+    border: 1px solid #CCEbf2;
+    border-radius: 20px;
+
+    background: white;
+    color: var(--blue-deep);
+
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
 .learn-toggle input {
-  accent-color: var(--primary);
-  cursor: pointer;
+    accent-color: var(--blue-main);
+    cursor: pointer;
 }
 
-/* ---------- Area Pesan ---------- */
+/* Area pesan */
 
 .messages {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 14px;
-  overflow-y: auto;
-  padding: 20px;
-  scroll-behavior: smooth;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 18px;
+
+    overflow-y: auto;
+    padding: 25px;
+
+    scroll-behavior: smooth;
+
+    background:
+        radial-gradient(circle at 10% 15%, #EAF9FC 0, transparent 18%),
+        radial-gradient(circle at 90% 85%, #FFF9E9 0, transparent 20%),
+        #FBFEFF;
 }
 
+/* Baris pesan */
+
 .msg {
-  display: flex;
-  align-items: flex-end;
-  gap: 9px;
-  max-width: 82%;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    max-width: 82%;
 }
 
 .msg-user {
-  align-self: flex-end;
+    align-self: flex-end;
 }
 
 .msg-bot {
-  align-self: flex-start;
+    align-self: flex-start;
 }
+
+/* Avatar pesan */
 
 .msg-avatar {
-  flex-shrink: 0;
-  font-size: 23px;
+    flex-shrink: 0;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #E4F8FC;
+
+    font-size: 22px;
 }
 
-.bubble {
-  padding: 11px 15px;
-  border-radius: 15px;
-  line-height: 1.5;
-  font-size: 14px;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
+/* Bubble percakapan
+   Selector dibatasi pada .msg agar tidak mengganggu
+   gelembung dekorasi welcome dan halaman utama. */
+
+.msg .bubble {
+    padding: 13px 17px;
+    border-radius: 19px;
+
+    font-size: 14px;
+    line-height: 1.65;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
 }
 
 .msg-user .bubble {
-  border-bottom-right-radius: 4px;
-  background: var(--primary);
-  color: var(--white);
+    border-bottom-right-radius: 6px;
+
+    background: linear-gradient(
+        135deg,
+        #20A8C5,
+        #45BFD3
+    );
+
+    color: white;
+    box-shadow: 0 4px 10px rgba(32, 168, 197, 0.12);
 }
 
 .msg-bot .bubble {
-  border: 1px solid var(--border);
-  border-bottom-left-radius: 4px;
-  background: #F1F5F9;
-  color: var(--text-dark);
+    border: 1px solid var(--border);
+    border-bottom-left-radius: 6px;
+
+    background: white;
+    color: #456B7A;
+
+    box-shadow: 0 3px 10px rgba(33, 126, 153, 0.05);
 }
 
 .meta {
-  display: block;
-  margin-top: 5px;
-  color: #94A3B8;
-  font-size: 11px;
+    display: block;
+    margin-top: 5px;
+    color: #91AEB8;
+    font-size: 11px;
 }
 
-/* ---------- Mode Belajar ---------- */
+/* Kandidat Mode Belajar */
 
 .candidates {
-  margin: 9px 0 0;
-  padding-left: 20px;
-  color: #475569;
-  font-size: 12px;
-  line-height: 1.7;
+    margin: 9px 0 0;
+    padding-left: 20px;
+
+    color: #648391;
+    font-size: 12px;
+    line-height: 1.7;
 }
 
-/* ---------- Saran Pertanyaan ---------- */
+
+/* =========================================================
+   7. SARAN PERTANYAAN
+   ========================================================= */
 
 .suggestions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 12px 16px;
-  border-top: 1px solid var(--border);
-  background: #FAFCFD;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 15px 19px;
+
+    border-top: 1px solid var(--border);
+    background: #F5FCFD;
 }
 
 .chip {
-  padding: 7px 13px;
-  border: 1px solid var(--primary);
-  border-radius: 999px;
-  background: var(--white);
-  color: var(--primary);
-  font-size: 12px;
-  cursor: pointer;
-  transition: 0.2s ease;
+    padding: 9px 15px;
+
+    border: 1px solid #BCE6EE;
+    border-radius: 20px;
+
+    background: white;
+    color: var(--blue-deep);
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
 .chip:hover {
-  background: var(--primary);
-  color: var(--white);
+    background: var(--blue-main);
+    border-color: var(--blue-main);
+    color: white;
+    transform: translateY(-2px);
 }
 
-/* ---------- Form Chat ---------- */
+
+/* =========================================================
+   8. FORM INPUT CHAT
+   ========================================================= */
 
 .chat-form {
-  display: flex;
-  gap: 10px;
-  padding: 14px 16px;
-  border-top: 1px solid var(--border);
-  background: var(--white);
+    display: flex;
+    gap: 12px;
+
+    padding: 17px 19px;
+
+    border-top: 1px solid var(--border);
+    background: white;
 }
 
 .chat-form input {
-  flex: 1;
-  min-width: 0;
-  padding: 11px 16px;
-  border: 1px solid #CBD5E1;
-  border-radius: 999px;
-  background: #F8FAFC;
-  font-size: 14px;
-  outline: none;
-  transition: 0.2s ease;
+    flex: 1;
+    min-width: 0;
+
+    padding: 14px 19px;
+
+    border: 1.5px solid #D5EAF0;
+    border-radius: 25px;
+
+    background: #F6FCFD;
+    color: var(--blue-dark);
+
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.chat-form input::placeholder {
+    color: #9BB4BD;
 }
 
 .chat-form input:focus {
-  border-color: var(--primary);
-  background: var(--white);
-  box-shadow: 0 0 0 3px rgba(8, 127, 174, 0.12);
+    border-color: var(--blue-main);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(32, 168, 197, 0.1);
 }
 
 .chat-form button {
-  padding: 0 22px;
-  border: none;
-  border-radius: 999px;
-  background: var(--primary);
-  color: var(--white);
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s ease;
+    padding: 0 25px;
+
+    border: none;
+    border-radius: 22px;
+
+    background: var(--blue-main);
+    color: white;
+
+    font-weight: 800;
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 var(--blue-deep);
+    transition: 0.2s ease;
 }
 
 .chat-form button:hover {
-  filter: brightness(0.92);
+    background: var(--blue-deep);
+    transform: translateY(-2px);
 }
 
 .chat-form button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
-/* ---------- Halaman Admin ---------- */
+
+/* =========================================================
+   9. HALAMAN ADMIN DAN STATISTIK
+   ========================================================= */
 
 .admin {
-  padding: 26px;
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: var(--white);
-  box-shadow: var(--shadow);
+    padding: 26px;
+    overflow-x: auto;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    background: white;
+    box-shadow: var(--shadow);
 }
 
 .admin h1 {
-  margin-top: 0;
-  color: var(--primary);
-  font-size: 25px;
+    margin-top: 0;
+    color: var(--blue-deep);
+    font-size: 25px;
 }
 
 .admin h2 {
-  margin-top: 30px;
-  color: var(--text-dark);
-  font-size: 18px;
+    margin-top: 30px;
+    color: var(--blue-dark);
+    font-size: 18px;
 }
 
 .muted {
-  color: var(--text-muted);
-  font-size: 14px;
+    color: var(--text-muted);
+    font-size: 14px;
 }
 
+/* Kartu statistik */
+
 .stat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 14px;
-  margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+    margin-top: 22px;
 }
 
 .stat {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 17px;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  background: var(--blue-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    padding: 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    background: var(--blue-soft);
 }
 
 .stat-num {
-  color: var(--primary);
-  font-size: 27px;
-  font-weight: 800;
+    color: var(--blue-deep);
+    font-size: 27px;
+    font-weight: 900;
 }
 
 .stat span:last-child {
-  color: var(--text-muted);
-  font-size: 13px;
+    color: var(--text-muted);
+    font-size: 13px;
 }
 
+/* Tabel admin */
+
 .table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
 }
 
 .table th,
 .table td {
-  padding: 11px 12px;
-  border-bottom: 1px solid var(--border);
-  text-align: left;
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
 }
 
 .table th {
-  background: #F1F5F9;
-  color: #334155;
-  font-weight: 700;
+    background: #EAF8FB;
+    color: var(--blue-dark);
+    font-weight: 800;
 }
 
 .table tr:hover td {
-  background: #F8FAFC;
+    background: #F7FCFD;
 }
 
+/* Grafik statistik */
+
 .bar {
-  min-width: 120px;
-  height: 10px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: #E2E8F0;
+    min-width: 120px;
+    height: 10px;
+    overflow: hidden;
+
+    border-radius: 999px;
+    background: #E2F1F4;
 }
 
 .bar span {
-  display: block;
-  height: 100%;
-  border-radius: 999px;
-  background: var(--primary);
+    display: block;
+    height: 100%;
+
+    border-radius: 999px;
+    background: var(--blue-main);
 }
 
-/* ---------- Halaman Error ---------- */
+/* Link admin */
 
 .admin a,
 .hero a {
-  color: var(--primary);
+    color: var(--blue-deep);
 }
 
-/* ---------- Responsif Tablet dan Smartphone ---------- */
+
+/* =========================================================
+   10. HALAMAN ERROR
+   ========================================================= */
+
+.error-page {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 35px;
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    background: white;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.error-page h1 {
+    color: var(--blue-deep);
+}
+
+.error-page p {
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   11. RESPONSIVE - TABLET
+   ========================================================= */
 
 @media (max-width: 768px) {
-  .container {
-    padding: 20px 14px;
-  }
 
-  .hero h1 {
-    font-size: 25px;
-  }
+    .container {
+        padding: 20px 14px;
+    }
 
-  .chat-card {
-    height: calc(100dvh - 145px);
-    min-height: 440px;
-  }
+    /* Chat */
 
-  .chat-header {
-    flex-wrap: wrap;
-    padding: 13px;
-  }
+    .chat-card {
+        height: calc(100dvh - 145px);
+        min-height: 440px;
+    }
 
-  .learn-toggle {
-    margin-left: auto;
-  }
+    .chat-header {
+        flex-wrap: wrap;
+        padding: 13px;
+    }
 
-  .msg {
-    max-width: 90%;
-  }
+    .learn-toggle {
+        margin-left: auto;
+    }
+
+    .msg {
+        max-width: 90%;
+    }
+
+    /* Home */
+
+    .home-aquatic {
+        padding: 22px 16px;
+    }
+
+    .home-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .home-hero-text > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-hero-art {
+        min-height: 230px;
+    }
+
+    .home-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-chat-banner {
+        flex-wrap: wrap;
+    }
+
+    .home-banner-text {
+        min-width: 65%;
+    }
 }
+
+
+/* =========================================================
+   12. RESPONSIVE - SMARTPHONE
+   ========================================================= */
 
 @media (max-width: 600px) {
-  .topbar {
-    flex-wrap: wrap;
-    padding: 11px 14px;
-  }
 
-  .brand {
-    font-size: 16px;
-  }
+    /* Navbar */
 
-  .header-actions {
-    gap: 6px;
-  }
+    .topbar {
+        flex-wrap: wrap;
+        padding: 11px 14px;
+    }
 
-  .btn-ghost {
-    padding: 6px 9px;
-    font-size: 11px;
-  }
+    .brand {
+        font-size: 17px;
+    }
 
-  .hero {
-    padding: 25px 16px;
-  }
+    .header-actions {
+        gap: 6px;
+    }
 
-  .hero h1 {
-    font-size: 22px;
-  }
+    .btn-ghost {
+        padding: 6px 9px;
+        font-size: 11px;
+    }
 
-  .hero p {
-    font-size: 13px;
-  }
+    /* Welcome */
 
-  .theme-grid {
-    grid-template-columns: 1fr;
-  }
+    .welcome-screen {
+        width: 100%;
+        min-height: 100dvh;
+        padding: 35px 20px;
+        border-radius: 0;
+    }
 
-  .chat-card {
-    height: calc(100dvh - 135px);
-    min-height: 420px;
-    border-radius: 13px;
-  }
+    .welcome-content h1 {
+        font-size: 49px;
+    }
 
-  .chat-header {
-    gap: 10px;
-  }
+    .welcome-description {
+        font-size: 14px;
+    }
 
-  .avatar {
-    width: 42px;
-    height: 42px;
-    font-size: 25px;
-  }
+    .welcome-bubbles .bubble {
+        opacity: 0.6;
+    }
 
-  .chat-header h1 {
-    font-size: 16px;
-  }
+    /* Home */
 
-  .chat-header p {
-    font-size: 12px;
-  }
+    .home-aquatic {
+        padding: 18px 14px;
+    }
 
-  .learn-toggle {
-    font-size: 11px;
-  }
+    .home-hero {
+        padding: 20px 5px;
+    }
 
-  .messages {
-    padding: 13px;
-  }
+    .home-hero h1 {
+        font-size: 38px;
+    }
 
-  .msg {
-    max-width: 95%;
-  }
+    .home-art-circle {
+        width: 190px;
+        height: 190px;
+    }
 
-  .bubble {
-    padding: 9px 12px;
-    font-size: 13px;
-  }
+    .home-whale {
+        font-size: 100px;
+    }
 
-  .suggestions {
-    gap: 6px;
-    padding: 10px;
-  }
+    .home-section-heading h2 {
+        font-size: 19px;
+    }
 
-  .chip {
-    padding: 6px 10px;
-    font-size: 11px;
-  }
+    .home-chat-banner {
+        padding: 17px;
+    }
 
-  .chat-form {
-    gap: 7px;
-    padding: 10px;
-  }
+    .home-banner-button {
+        width: 100%;
+    }
 
-  .chat-form input {
-    padding: 10px 13px;
-    font-size: 13px;
-  }
+    /* Chat */
 
-  .chat-form button {
-    padding: 0 15px;
-    font-size: 13px;
-  }
+    .chat-card {
+        height: calc(100dvh - 135px);
+        min-height: 420px;
+        border-radius: 18px;
+    }
 
-  .admin {
-    padding: 16px;
-  }
+    .chat-header {
+        gap: 10px;
+    }
 
-  .admin h1 {
-    font-size: 21px;
-  }
+    .avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 25px;
+    }
 
-  .table {
-    min-width: 480px;
-  }
+    .chat-header h1 {
+        font-size: 16px;
+    }
 
-  .stat-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 9px;
-  }
+    .chat-header p {
+        font-size: 12px;
+    }
 
-  .stat {
-    padding: 12px;
-  }
+    .learn-toggle {
+        font-size: 11px;
+    }
 
-  .stat-num {
-    font-size: 23px;
-  }
+    .messages {
+        padding: 13px;
+    }
+
+    .msg {
+        max-width: 95%;
+    }
+
+    .msg .bubble {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .suggestions {
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .chip {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .chat-form {
+        gap: 7px;
+        padding: 10px;
+    }
+
+    .chat-form input {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+
+    .chat-form button {
+        padding: 0 15px;
+        font-size: 13px;
+    }
+
+    /* Admin */
+
+    .admin {
+        padding: 16px;
+    }
+
+    .admin h1 {
+        font-size: 21px;
+    }
+
+    .table {
+        min-width: 480px;
+    }
+
+    .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+    }
+
+    .stat {
+        padding: 12px;
+    }
+
+    .stat-num {
+        font-size: 23px;
+    }
 }
+
+/* Memusatkan halaman welcome pada seluruh lebar layar */
+.container:has(.welcome-screen) {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-screen {
+    width: 100%;
+    max-width: none;
+    min-height: calc(100vh - 42px);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-content {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+/* =========================================================
+   AKHIR STYLE.CSS - RENANGPEDIA CUTE AQUATIC
+   ========================================================= */
